@@ -1,0 +1,42 @@
+@page
+@model Project.Pages.Heroes.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Hero</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hero.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hero.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hero.Role)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hero.Role)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hero.HitPoints)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hero.HitPoints)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hero.Abilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hero.Abilities)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>

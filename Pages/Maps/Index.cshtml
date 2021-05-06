@@ -1,0 +1,51 @@
+@page
+@model Project.Pages.Maps.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Maps</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @{
+                    var nameSort = "name_asc";
+                    if (Model.CurrentSort == "name_asc")
+                    {
+                        nameSort = "name_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@nameSort">@Html.DisplayNameFor(model => model.Map[0].Name)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Map[0].GameMode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Map[0].Location)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Map) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameMode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.MapId">Details</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
